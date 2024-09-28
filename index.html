@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="InterDance: Reactive 3D Dance Generation with Realistic Duet Interactions">
+  <meta name="keywords" content="Motion Generation, Music to Dance, Human-Human Interactions">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>InterDance: Reactive 3D Dance Generation with Realistic Duet Interactions</title>
+
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+</style>
+
+
+</head>
+<body>
+  <button id="fixedButton">Croissant</button>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">InterDance: Reactive 3D Dance Generation 
+            with Realistic Duet Interactions </h1>
+          <!-- <h2 class="title is-4 publication-title">This page is under construction🔨</h2> -->
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              
+              <!-- PDF Link. --> 
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/abs/2403.18811"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+
+             
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://youtu.be/Y2zksX3cSCw"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/angzong/interDance_API"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+              <!-- Dataset Link.  -->
+              
+
+              <span class="link-block">
+                <a href="https://interdance.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                </a>
+                <p>
+                  Please do not distribute the Data. Full Dataset and Code will be publicly available when this paper is accepted.
+                </p>
+
+           
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Teaser Video/GIF Auto-play
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Some sample videos/gifs rolling?
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Humans can perform a variety of interactive motions, among which two-person dance is one of the most challenging interactions. However, in terms of computer motion generation, current work is still unable to generate high-quality interactive motion, especially in the field of duet dance. On the one hand, this is caused by the lack of large-scale high-quality datasets. On the other hand, it arises from the incomplete representation of interactive motion and the lack of fine-grained optimization of interactions. To address these challenges, we propose a duet dance dataset that significantly enhances motion quality, data scale, and the variety of dance genres. Based on this dataset, we propose a new motion representation that can accurately and comprehensively describe interactive motion. We further introduce a diffusion-based algorithm with an interaction refine guidance strategy to optimize the realism of interactions progressively. Experiments demonstrate the effectiveness of our dataset and algorithm. Our project page is https://interdance.github.io/.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe class='video' style="width:100%" src="https://interdance.github.io/"
+              title="InterDance: Reactive 3D Dance Generation for Realistic Two Dancer Interactions"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<!-- <section class='section'>
+  <div class="container is-max-desktop content">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">AR Demo (OOD)</h2>
+        <div class="publication-video">
+          <iframe class='video' style="width:100%" src="https://www.youtube.com/embed/Kd-ix1yQEoQ?si=b0WRG0FCCmacYulX"
+              title="Duolando AR (OOD) demo" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class='section'>
+  <div class="container is-max-desktop content">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Data Examples (Quick Scan)</h2>
+        <div>
+        This section showcases in the InteracDance dataset.
+		<!-- <div><a href="./gallery.html" style="color:cornflowerblue;padding:0;border:none;background:none">▶ More Examples on InterDance Gallery</a></div> -->
+		<table>
+		    <tr style="display:table-row">
+          <td>
+              <div>
+          <iframe src="https://www.youtube.com/embed/4vYpuA74BHw" title="quick show Rumba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div style="text-align: center; font-size: large;">
+                  <span style="font-style:italic">Rumba</span>
+              </div>
+          </td>
+		        <td>
+		            <div>
+						<iframe src="https://www.youtube.com/embed/qekhfSb5pnI" title="quick show Chacha" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		            </div>
+		            <div style="text-align: center; font-size: large;">
+		                <span style="font-style:italic">Cha Cha</span>
+		            </div>
+        		</td>
+			</tr>
+		    <tr style="display:table-row">
+          <td>
+              <div>
+          <iframe src="https://www.youtube.com/embed/wV8HjR2zPag/" title="quick show Waltz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div style="text-align: center; font-size: large;">
+                  <span style="font-style:italic">Waltz</span>
+              </div>
+          </td>
+		        <td>
+		            <div>
+						<iframe src="https://www.youtube.com/embed/6gVjw98Y-Ak" title="quick show Jazz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		            </div>
+		            <div style="text-align: center; font-size: large;">
+		                <span style="font-style:italic">Jazz</span>
+		            </div>
+        		</td>
+            
+			</tr>
+		    <tr style="display:table-row">
+		        <td>
+		            <div>
+						<iframe src="https://www.youtube.com/embed/Di284unwZuY" title="quick show Shenyun" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		            </div>
+		            <div style="text-align: center; font-size: large;">
+		                <span style="font-style:italic">Shenyun</span>
+		            </div>
+        		</td>
+		        <td>
+		            <div>
+						<iframe src="https://www.youtube.com/embed/5cVuJ3ryzPM" title="quick show Jive" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		            </div>
+		            <div style="text-align: center; font-size: large;">
+		                <span style="font-style:italic">Jive</span>
+		            </div>
+        		</td>
+			</tr>
+		    <tr style="display:table-row">
+		        <td>
+		            <div>
+						<iframe src="https://www.youtube.com/embed/i8ccKw-Kvzg" title="quick show Tai" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		            </div>
+		            <div style="text-align: center; font-size: large;">
+		                <span style="font-style:italic">Tai</span>
+		            </div>
+        		</td>
+		        <td>
+		            <div>
+						<iframe src="https://www.youtube.com/embed/D8HCZMZpTBc" title="quick show Uighur" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		            </div>
+		            <div style="text-align: center; font-size: large;">
+		                <span style="font-style:italic">Uighur</span>
+		            </div>
+        		</td>
+			</tr>
+		    <tr style="display:table-row">
+		        <td>
+		            <div>
+						<iframe src="https://www.youtube.com/embed/jAf1icyxF9M" title="quick show Hantang" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		            </div>
+		            <div style="text-align: center; font-size: large;">
+		                <span style="font-style:italic">Hantang</span>
+		            </div>
+        		</td>
+		        <td>
+		            <div>
+						<iframe src="https://www.youtube.com/embed/Fj0dQAO43Rg" title="quick show Hiphop" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		            </div>
+		            <div style="text-align: center; font-size: large;">
+		                <span style="font-style:italic">Hiphop</span>
+		            </div>
+        		</td>
+			</tr>
+      <tr style="display:table-row">
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/1bw2m89S5hE" title="quick show Dunhuang" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Dunhuang</span>
+            </div>
+        </td>
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/VgaHs3fppgE" title="quick show Kpop" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Kpop</span>
+            </div>
+        </td>
+  </tr>
+  <tr style="display:table-row">
+    <td>
+        <div>
+    <iframe src="https://www.youtube.com/embed/ps4upNMSH18" title="quick show Urban" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div style="text-align: center; font-size: large;">
+            <span style="font-style:italic">Urban</span>
+        </div>
+    </td>
+    <td>
+        <div>
+    <iframe src="https://www.youtube.com/embed/_WGpd9hLAwo" title="quick show Miao" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div style="text-align: center; font-size: large;">
+            <span style="font-style:italic">Miao</span>
+        </div>
+    </td>
+  </tr>
+  <tr style="display:table-row">
+    <td>
+        <div>
+    <iframe src="https://www.youtube.com/embed/RHZ_AuWRirY" title="quick show Samba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div style="text-align: center; font-size: large;">
+            <span style="font-style:italic">Samba</span>
+        </div>
+    </td>
+    <!-- <td>
+        <div>
+    <iframe src="https://www.youtube.com/embed/WX2UjWC0VgQ" title="quick show Samba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div style="text-align: center; font-size: large;">
+            <span style="font-style:italic">Samba</span>
+        </div>
+    </td> -->
+  </tr>
+		</table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class='section'>
+  <div class="container is-max-desktop content">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Reactive Dance Generation</h2>
+        <div>
+        This section showcases the dances generated by our method.
+        <div>
+        The reative dance generation task need to generate the follower's dance from given music and leader's dance.
+		<table>
+		    <tr style="display:table-row">
+		        <td>
+		            <div>
+						<iframe src="https://www.youtube.com/embed/qpgTAp7tGlI" title="quick show Rumba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		            </div>
+		            <div style="text-align: center; font-size: large;">
+		                <span style="font-style:italic">Rumba (React)</span>
+		            </div>
+        		</td>
+		        <td>
+		            <div>
+						<iframe src="https://www.youtube.com/embed/993VZD2tnP0" title="quick show Waltz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		            </div>
+		            <div style="text-align: center; font-size: large;">
+		                <span style="font-style:italic">Waltz (React)</span>
+		            </div>
+        		</td>
+			</tr>
+		    <tr style="display:table-row">
+		        <td>
+		            <div>
+						<iframe src="https://www.youtube.com/embed/xud-cF6KosE" title="quick show Sumba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		            </div>
+		            <div style="text-align: center; font-size: large;">
+		                <span style="font-style:italic">Sumba (React)</span>
+		            </div>
+        		</td>
+		        <td>
+		            <div>
+						<iframe src="https://www.youtube.com/embed/YenNeLgcN4g" title="quick show Shenyun" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		            </div>
+		            <div style="text-align: center; font-size: large;">
+		                <span style="font-style:italic">Shenyun (React)</span>
+		            </div>
+        		</td>
+			</tr>
+		    
+		</table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class='section'>
+  <div class="container is-max-desktop content">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Duet Dance Generation</h2>
+        <div>
+        This section showcases the dances generated by our method. 
+        <div>The duet dance generation need to generate two-person's dance from given music.
+		<table>
+      <tr style="display:table-row">
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/YGE2IqGVaR4" title="quick show Waltz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Waltz (duet)</span>
+            </div>
+        </td>
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/1zB6eHoP-LA" title="quick show Rumba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Rumba (duet)</span>
+            </div>
+        </td>
+  </tr>
+		</table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class='section'>
+  <div class="container is-max-desktop content">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Effect of interaction refine guidance</h2>
+      <div>
+    <div>
+  <div>
+  <div>
+    <iframe src="https://www.youtube.com/embed/AgxkT_3eDLg?vq=hd1080" width="800" height="450" title="Waltz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+  <div>
+    <iframe src="https://www.youtube.com/embed/KiyNq8j8EOs?vq=hd1080" width="800" height="450" title="Rumba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+</section> -->
+
+<!-- <section class="section">
+  <div class="container is-max-desktop content">
+    <div class="column is-full-width">
+      <h2 class="title is-3">GPT</h2>
+        
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{siyao2024duolando,
+  author    = {Li Siyao, Tianpei Gu, Zhitao Yang, Zhengyu Lin, Ziwei Liu, Henghui Ding, Lei Yang, Chen Change Loy},
+  title     = {Duolando: Follower GPT with Off-Policy Reinforcement Learning for Dance Accompaniment},
+  booktitle = {ICLR},
+  year      = {2024},
+}</code></pre>
+  </div>
+</section> -->
+
+<a href="https://clustrmaps.com/site/1bw8l" title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=gyNaovoCDCnFAlIcQkc_74fe9iuwCBzj29JNZY0oo08&cl=ffffff"  height="1" width="1"></a>
+<section class='section'>
+  <div class="container is-max-desktop content">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">License</h2>
+        <div>
+          This dataset is provided solely for the purpose of review. Please do not redistribute this dataset. 
+          The dataset will be officially released with the camera-ready version of the paper.
+          <!-- <a href="https://github.com/lisiyao21/Bailando/blob/main/LICENSE" target="_blank">NTU S-Lab 1.0 License</a>. -->
+	    </div>
+      </div>
+    </div>
+  </div>
+</section>   
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            The website template was borrowed from <a
+            href="https://lisiyao21.github.io/projects/Duolando/">Duolando</a>, <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('fixedButton').addEventListener('click', function() {
+      window.open('static/croissant.json', '_blank');
+  });
+</script>
+
+
+</body>
+</html>
